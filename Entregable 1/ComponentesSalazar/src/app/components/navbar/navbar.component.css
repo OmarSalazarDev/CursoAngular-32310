@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------
+# NAVBAR
+--------------------------------------------------------------*/
+.header-sidebar p {
+  padding: 20px;
+  width: 100%;
+  background-color: var(--color-azul);
+  border-left: solid 5px var(--color-rojo);
+  font-family: var(--letra-titulo);
+  color: var(--color-blanco);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-to{
+  border-left: solid 20px var(--color-rojo);
+  background-color: rgba(163, 169, 172, .4);
+  font-family: var(--letra-cuerpo);
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 0% !important;
+}
+
+.btn-to:hover {
+  background-color:var(--color-rojo);
+  color: var(--color-blanco);
+}
+
+.btn-to.active{
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  transition: 3ms;
+}

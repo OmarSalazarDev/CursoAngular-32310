@@ -1,0 +1,88 @@
+/*--------------------------------------------------------------
+# TOOLBAR
+--------------------------------------------------------------*/
+#topbar {
+  height: 50px;
+  padding: 0;
+  font-size: 14px;
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  transition: all 0.5s;
+}
+
+#topbar .contact-info i {
+  font-style: normal;
+  color: var(--color-blanco);
+}
+
+#topbar .contact-info a {
+  padding-left: 5px;
+  text-decoration: none;
+  font-family: var(--letra-cuerpo);
+  font-size: 14px;
+  line-height: 0;
+  color: var(--color-blanco);
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: var(--color-focus);
+}
+
+#topbar .social-links a {
+  height: 35px;
+  width: 35px;
+  margin-right: 6px;
+  line-height: 35px;
+  text-align: center;
+  color: var(--color-blanco);
+  border: 1px solid var(--color-blanco);
+}
+
+#topbar .social-links a:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-focus);
+}
+
+img.logosyg {
+  max-width: 130px;
+  margin-left: 100px;
+}
+
+/*--------------------------------------------------------------
+# RESPONSIVE
+--------------------------------------------------------------*/
+@media (max-width: 1280px) {
+  .logosyg img {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logosyg img {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .logosyg img {
+    margin-left: 140px;
+  }
+}
+
+@media (max-width: 800px) {
+  .logosyg img {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 522px) {
+  #topbar .contact-info .contact-dir,
+  #topbar .contact-info .i-dir {
+      display: none !important;
+  }
+
+  #topbar .social-links{
+      display: none !important;
+  }
+}

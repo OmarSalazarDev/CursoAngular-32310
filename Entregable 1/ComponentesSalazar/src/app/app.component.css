@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:host {
+    --color-azul: rgb(33, 53, 101);
+    --color-rojo: rgb(207, 18, 45);
+    --color-negro: rgb(56, 57, 53);
+    --color-gris: rgb(153, 169, 172);
+    --color-blanco: rgb(255, 255, 255);
+    --color-focus: rgb(163, 169, 172);
+
+    --letra-titulo: 'Montserrat', sans-serif;
+    --letra-cuerpo: 'Roboto';
+}

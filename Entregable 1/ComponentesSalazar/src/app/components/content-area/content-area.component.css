@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .container .row h1 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #213565;
+  font-family: var(--letra-titulo);
+  padding: 10px;
+  border-left: solid 5px var(--color-rojo);
+  margin-left: 10px;
+  margin-top: 2%;
+}
+
+.about img {
+  width: 400px;
+  height: 400px;
+  margin-block-end: 20%;
+  box-shadow: -2px 2px 2px 2px rgb(85 111 138 / 20%);
+}
+
+.about table {
+ border-left: solid 5px var(--color-azul);
+}
+
+.about table td h2{
+  font-size: 14px;
+  font-family: var(--letra-cuerpo);
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0px;
+ }
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.btn-color {
+  background-color: var(--color-rojo);
+  border-color: var(--color-rojo);
+}
+
+@media (max-width: 522px) {
+  .about img {
+    width: 300px;
+    height: 300px;
+  }
+}
