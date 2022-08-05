@@ -1,0 +1,11 @@
+.bg-gris {
+  background-color: rgba(153, 169, 172, 0.5);
+}
+
+h4, h4 .span {
+  color: rgb(33, 53, 101);
+}
+
+.invalid-dato {
+  color: rgb(207, 18, 45);
+}

@@ -1,0 +1,152 @@
+<div class="container">
+
+    <div class="py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../../../assets/S&GPARTS_Logo.png" alt="" width="72" height="85">
+      <h2>FORMULARIO DE PAGO</h2>
+    </div>
+
+    <div class="row g-5 bg-gris">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          Tu Carrito
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Laptop Lenovo 17"</h6>
+              <small class="text-muted">SSD 1TB, 16RAM</small>
+            </div>
+            <span class="text-muted">$2700.00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Audífonos Skullcandy</h6>
+              <small class="text-muted">Color: Negro</small>
+            </div>
+            <span class="text-muted">$170.00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Monitor 22" Xiaomi</h6>
+              <small class="text-muted">Color: Negro</small>
+            </div>
+            <span class="text-muted">$600.00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+            <strong>$4470.00</strong>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Datos Personales</h4>
+        <form class="needs-validation" [formGroup]="formularioContacto" (ngSubmit)="enviarContacto()">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombres</label>
+              <input type="text" class="form-control" formControlName="nombre">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('nombre')?.errors?.['required']">
+                Se requiere un nombre válido.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellidos</label>
+              <input type="text" class="form-control" formControlName="apellido">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('apellido')?.errors?.['required']">
+                Se requiere un apellido válido.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('email')?.errors?.['required']">
+                Se requiere un correo electrónico válido.
+              </div>
+              <div class="invalid-dato" *ngIf="formularioContacto.get('email')?.errors?.['email']">
+                Ingrese una dirección de correo electrónico válida.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Dirección</label>
+              <input type="text" class="form-control" formControlName="direccion">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('direccion')?.errors?.['required']">
+                Por favor introduzca su direccion de envio.
+              </div>
+            </div>
+
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Tarjeta de Crédito</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">Tarjeta de Debito</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Nombre de la Tarjeta</label>
+              <input type="text" class="form-control" formControlName="nombreTarjeta" >
+              <div class="invalid-dato" *ngIf="formularioContacto.get('nombreTarjeta')?.errors?.['required']">
+                Se requiere el nombre en la tarjeta.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Número de la Tarjeta</label>
+              <input type="text" class="form-control" formControlName="numerotarjeta" placeholder="1234567890123456">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('numerotarjeta')?.errors?.['required']">
+                Se requiere número de tarjeta.
+              </div>
+              <div class="invalid-dato" *ngIf="formularioContacto.get('numerotarjeta')?.errors?.['pattern']">
+                Ingrese un número de tarjeta válida de 16 dígitos.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">F.Vencimiento</label>
+              <input type="text" class="form-control" formControlName="fechaVencimiento" placeholder="MM/AA">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('fechaVencimiento')?.errors?.['required']">
+                Fecha de vencimiento requerida.
+              </div>
+              <div class="invalid-dato" *ngIf="formularioContacto.get('fechaVencimiento')?.errors?.['pattern']">
+                Ingrese una fecha de vencimiento válida MM/AA.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" formControlName="cvv" placeholder="000">
+              <div class="invalid-dato" *ngIf="formularioContacto.get('cvv')?.errors?.['required']">
+                Código de seguridad requerido.
+              </div>
+              <div class="invalid-dato" *ngIf="formularioContacto.get('cvv')?.errors?.['pattern']">
+                Ingrese un código de seguridad válida de 3 dígitos.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg my-5" type="submit" [disabled]="!formularioContacto.valid">Continuar checkout</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+<footer class="my-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2022 F4 System</p>
+</footer>
