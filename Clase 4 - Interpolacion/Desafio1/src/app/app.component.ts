@@ -20,5 +20,8 @@ export class AppComponent {
       nombre: 'José',
       apellido: 'Hernandez'
     }
-  ]
+  ];
+
+  contenido1: string = "Este es el contenido del párrafo 1";
+  contenido2: string = "Este es el contenido del párrafo 2";
 }
