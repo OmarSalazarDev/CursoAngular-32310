@@ -1,4 +1,4 @@
-<h1>Ejemplos de directivas:</h1>
+<h1 (mouseenter)="cambiarVariable1();">Ejemplos de directivas:</h1>
 <h2>Directiva ngClass</h2>
 <h3 [ngClass]="variable1 < 5 ? 'texto-error' : 'texto-exito'">Valor de la variable: {{ variable1 }}</h3>
 <hr>
@@ -27,3 +27,13 @@
   <span *ngSwitch="'Agustin'">Caso 2 para {{ variable2 }}</span>
   <span *ngSwitchDefault>Caso default para {{ variable2 }}</span>
 </p>
+<hr>
+
+<button (click)="cambiarVariable1();">Cambiar Variable 1</button>
+<hr>
+
+<input type="text" placeholder="Ingrese el valor de variable1" [(ngModel)]="variable1">
+<hr>
+
+<h3>{{ familiares | json }}</h3>
+<h3>{{ ahora | date:'dd/MM/yyyy hh:mm:ss' }}</h3>
