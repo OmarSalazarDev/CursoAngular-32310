@@ -2,27 +2,45 @@
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 appDirectivaPersonalizada>GESTION DE ALUMNOS</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-      <div class="btn-group me-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-      </div>
     </div>
   </div>
+  <form [formGroup]="formularioAlumnos" (ngSubmit)="addAlumno();" class="row mb-5">
+        <div class="col-lg-6 mb-3">
+          <label>Nombre: </label>
+          <input class="form-control" type="text" formControlName="name">
+          <p *ngIf="formularioAlumnos.get('name')?.errors?.['required'] && formularioAlumnos.touched" role="alert">Este campo es obligatorio</p>
+        </div>
+        <div class="col-lg-6 mb-3">
+          <label>Apellido: </label>
+          <input class="form-control" type="text" formControlName="lastname">
+          <p *ngIf="formularioAlumnos.get('lastname')?.errors?.['required'] && formularioAlumnos.touched">Este campo es obligatorio</p>
+        </div>
+        <div class="col-lg-3 mb-3">
+          <label>Edad: </label>
+          <input class="form-control" type="text" formControlName="age">
+          <p *ngIf="formularioAlumnos.get('age')?.errors?.['required'] && formularioAlumnos.touched">Este campo es obligatorio</p>
+        </div>
+        <div class="col-lg-6 mb-3">
+          <label>Correo: </label>
+          <input class="form-control" type="text" formControlName="email">
+          <p *ngIf="formularioAlumnos.get('email')?.errors?.['required'] && formularioAlumnos.touched">Este campo es obligatorio</p>
+          <p *ngIf="formularioAlumnos.get('email')?.errors?.['email'] && formularioAlumnos.touched">Este campo debe tener un formato de correo</p>
+        </div>
+        <div class="col-lg-3 mb-3">
+          <label>Celular: </label>
+          <input class="form-control" type="text" formControlName="phone">
+          <p *ngIf="formularioAlumnos.get('phone')?.errors?.['required'] && formularioAlumnos.touched">Este campo es obligatorio</p>
+        </div>
+
+    <button type="submit">Enviar</button>
+  </form>
   <div class="table-responsive">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
-
       <!-- Position Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Nombres </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} {{element.lastname}} </td>
+        <th mat-header-cell *matHeaderCellDef> Estudiante </th>
+        <td mat-cell *matCellDef="let element"> {{ element | transformar }} </td>
       </ng-container>
 
       <!-- Name Column -->
@@ -51,17 +69,17 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button>
+          <button mat-icon-button (click)="editarAlumnos(element);">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button>
+          <button mat-icon-button (click)="eliminarAlumnos(element);">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
     </table>
 
 

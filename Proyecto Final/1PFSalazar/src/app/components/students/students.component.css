@@ -12,3 +12,8 @@
 table {
   width: 100%;
 }
+
+p {
+  color: red;
+  font-size: 8px;
+}
