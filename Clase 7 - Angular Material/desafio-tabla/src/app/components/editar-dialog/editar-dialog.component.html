@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Editar curso</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formulario">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Comisión</mat-label>
+      <input matInput placeholder="Comisión" formControlName="comision">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Profesor</mat-label>
+      <input matInput placeholder="Profesor" formControlName="profesor">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Número de estudiantes</mat-label>
+      <input matInput placeholder="Número de estudiantes" formControlName="numeroEstudiantes">
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="matriculaAbierta">Matrícula abierta</mat-slide-toggle>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cerrar();">Cerrar</button>
+  <button mat-button (click)="actualizar()">Actualizar</button>
+  <!-- <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button> -->
+</div>
