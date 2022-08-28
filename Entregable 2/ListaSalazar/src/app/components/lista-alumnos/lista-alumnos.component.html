@@ -1,0 +1,4 @@
+<h1 appTitulo>Lista de Alumnos</h1>
+<ul *ngFor="let elemento of alumnos">
+  <li [style.color]="elemento.nombre == 'Rosa' ? 'yellow' : elemento.nombre == 'Federico' ? 'green' : 'blue'" appLista>{{ elemento | listado }}</li>
+</ul>
