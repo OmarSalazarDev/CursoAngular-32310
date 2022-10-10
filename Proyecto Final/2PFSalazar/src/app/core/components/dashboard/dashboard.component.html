@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <div class="flex-shrink-0 py-3 bg-sidebar">
+        <a class="d-flex align-items-center text-decoration-none header-sidebar">
+          <p>DASHBOARD</p>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-to align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true" [routerLink]="['/students/list']" routerLinkActive="active">
+              ESTUDIANTE
+            </button>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-to align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true" [routerLink]="['/courses/list']" routerLinkActive="active">
+              CURSO
+            </button>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-to align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true" [routerLink]="['/inscriptions/list']" routerLinkActive="active">
+              INSCRIPCION
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 px-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
