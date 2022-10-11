@@ -45,4 +45,8 @@ export class CoursesService {
       this.readCourses();
     });
   }
+
+  obtenerCursos() {
+    return this.http.get(`${this.api}/courses`);
+  }
 }
