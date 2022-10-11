@@ -1,19 +1,21 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Inscription } from 'src/app/models/inscription';
 import { environment } from 'src/environments/environment';
-import { InscriptionsModule } from '../inscriptions.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InscriptionsService {
   private api: string = environment.api;
+  private subject!: BehaviorSubject<Inscription[]>;
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.subject = new BehaviorSubject<Inscription[]>([]);
+  }
 
   getInscriptions(): Observable<Inscription[]> {
     return this.http.get<Inscription[]>(`${this.api}/inscription`, {
