@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CoursesService } from 'src/app/courses/services/courses.service';
@@ -18,10 +18,10 @@ export class NewDialogComponent implements OnInit {
     private router: Router
   ) {
     this.fb = new FormGroup({
-      nameCourses: new FormControl(),
-      startDate: new FormControl(),
-      endDate: new FormControl(),
-      teacher: new FormControl(),
+      nameCourses: new FormControl('', Validators['required']),
+      startDate: new FormControl('', Validators['required']),
+      endDate: new FormControl('', Validators['required']),
+      teacher: new FormControl('', Validators['required'])
     });
   }
 

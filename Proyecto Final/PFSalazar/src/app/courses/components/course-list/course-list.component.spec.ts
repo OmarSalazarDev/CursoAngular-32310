@@ -1,13 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { CourseListComponent } from './course-list.component';
 
-describe('CourseListComponent', () => {
+describe('PU | MCourses - [CourseListComponent]', () => {
   let component: CourseListComponent;
   let fixture: ComponentFixture<CourseListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        MatDialogModule
+      ],
       declarations: [ CourseListComponent ]
     })
     .compileComponents();
@@ -17,7 +24,7 @@ describe('CourseListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente MCourses - [CourseListComponent] se creó correctamente.', () => {
     expect(component).toBeTruthy();
   });
 });
