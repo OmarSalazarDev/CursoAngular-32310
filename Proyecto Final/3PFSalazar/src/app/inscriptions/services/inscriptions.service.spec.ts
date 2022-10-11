@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { InscriptionsService } from './inscriptions.service';
 
-describe('InscriptionsService', () => {
+describe('PU | MInscriptions - [InscriptionsService]', () => {
   let service: InscriptionsService;
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('InscriptionsService', () => {
     service = TestBed.inject(InscriptionsService);
   });
 
-  it('should be created', () => {
+  it('El servicio MInscriptions - [InscriptionsService] se creó correctamente.', () => {
     expect(service).toBeTruthy();
   });
 });
