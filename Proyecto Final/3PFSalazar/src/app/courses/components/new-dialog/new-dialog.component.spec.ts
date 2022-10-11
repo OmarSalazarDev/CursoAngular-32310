@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NewDialogComponent } from './new-dialog.component';
+import { By } from '@angular/platform-browser';
 
 describe('PU | MCourses - [NewDialogComponent]', () => {
   let component: NewDialogComponent;
@@ -54,4 +55,25 @@ describe('PU | MCourses - [NewDialogComponent]', () => {
 
     expect(fb.invalid).toBeFalse();
   });
+
+  // it('Se renderiza el objeto de cursos cuando doy click al botón del formulario', () => {
+  //   const fb = component.fb;
+  //   const nameCourses = fb.controls['nameCourses'];
+  //   const startDate = fb.controls['startDate'];
+  //   const endDate = fb.controls['endDate'];
+  //   const teacher = fb.controls['teacher'];
+
+  //   nameCourses.setValue('Angular');
+  //   startDate.setValue('2022/10/01');
+  //   endDate.setValue('2022/12/31');
+  //   teacher.setValue('Pedro');
+
+  //   const boton = fixture.debugElement.query(By.css('#btnCrear'));
+  //   boton.nativeElement.click();
+  //   fixture.detectChanges();
+
+  //   const listCoursesRef = fixture.debugElement.query(By.css('#list-courses'));
+
+  //   expect(listCoursesRef).toBeTruthy();
+  // });
 });
