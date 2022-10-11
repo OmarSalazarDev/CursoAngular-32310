@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AuthService } from './auth.service';
 
-describe('AuthService', () => {
+describe('PU | MCore - [AuthService]', () => {
   let service: AuthService;
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('AuthService', () => {
     service = TestBed.inject(AuthService);
   });
 
-  it('should be created', () => {
+  it('El servicio MCore - [AuthService] se creó correctamente.', () => {
     expect(service).toBeTruthy();
   });
 });
