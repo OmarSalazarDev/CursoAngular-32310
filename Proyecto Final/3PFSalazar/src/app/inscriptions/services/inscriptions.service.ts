@@ -1,9 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Inscription } from 'src/app/models/inscription';
 import { environment } from 'src/environments/environment';
-import { InscriptionsModule } from '../inscriptions.module';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,9 @@ export class InscriptionsService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.subject = new BehaviorSubject<Inscription[]>([]);
+  }
 
   getInscriptions(): Observable<Inscription[]> {
     this.readInscriptions();

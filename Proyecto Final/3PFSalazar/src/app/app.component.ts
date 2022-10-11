@@ -13,9 +13,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private auth: AuthService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
     this.session$ = this.auth.getSession();
