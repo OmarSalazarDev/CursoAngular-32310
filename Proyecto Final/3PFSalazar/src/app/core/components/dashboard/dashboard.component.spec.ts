@@ -1,13 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { DashboardComponent } from './dashboard.component';
 
-describe('DashboardComponent', () => {
+describe('PU | MCore -[DashboardComponent]', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        HttpClientTestingModule
+      ],
       declarations: [ DashboardComponent ]
     })
     .compileComponents();
@@ -17,7 +22,7 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente MCore - [DashboardComponent] se creó correctamente.', () => {
     expect(component).toBeTruthy();
   });
 });

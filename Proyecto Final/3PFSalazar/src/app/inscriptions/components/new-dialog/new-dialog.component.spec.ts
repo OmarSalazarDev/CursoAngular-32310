@@ -1,13 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { NewDialogComponent } from './new-dialog.component';
 
-describe('NewDialogComponent', () => {
+describe('PU | MInscriptions - [NewDialogComponent]', () => {
   let component: NewDialogComponent;
   let fixture: ComponentFixture<NewDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        HttpClientTestingModule
+      ],
       declarations: [ NewDialogComponent ]
     })
     .compileComponents();
@@ -17,7 +22,7 @@ describe('NewDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente MInscriptions - [NewDialogComponent] se creó correctamente.', () => {
     expect(component).toBeTruthy();
   });
 });
